@@ -45,7 +45,7 @@ fun HobBottomNavigationBar(
                 },
                 icon = {
                     Icon(
-                        painterResource(id = hobDestination.selectedIcon),
+                        painterResource(id = hobDestination.icon),
                         contentDescription = stringResource(id = hobDestination.iconTextId),
                     )
                 },

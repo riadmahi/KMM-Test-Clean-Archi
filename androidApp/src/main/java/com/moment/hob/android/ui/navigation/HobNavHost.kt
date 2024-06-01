@@ -6,10 +6,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.moment.hob.android.ui.ChatScreen
-import com.moment.hob.android.ui.ExploreScreen
-import com.moment.hob.android.ui.LikesScreen
-import com.moment.hob.android.ui.ProfileScreen
+import com.moment.hob.android.ui.chat.ChatScreen
+import com.moment.hob.android.ui.explore.ExploreScreen
+import com.moment.hob.android.ui.likes.LikesScreen
+import com.moment.hob.android.ui.profile.ProfileScreen
 
 
 @Composable

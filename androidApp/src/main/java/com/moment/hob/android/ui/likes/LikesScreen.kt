@@ -1,4 +1,4 @@
-package com.moment.hob.android.ui
+package com.moment.hob.android.ui.likes
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -7,8 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun ProfileScreen() {
+fun LikesScreen() {
     Box(modifier = Modifier.fillMaxWidth()) {
-        Text(text = "Profile")
+        Text(text = "Likes")
     }
 }

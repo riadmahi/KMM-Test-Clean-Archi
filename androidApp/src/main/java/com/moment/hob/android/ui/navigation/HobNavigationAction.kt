@@ -14,8 +14,7 @@ object HobRoute {
 
 data class HobTopLevelDestination(
     val route: String,
-    @DrawableRes val selectedIcon: Int,
-    @DrawableRes val unselectedIcon: Int,
+    @DrawableRes val icon: Int,
     val iconTextId: Int
 )
 
@@ -41,26 +40,22 @@ class HobNavigationActions(private val navController: NavHostController) {
 val TOP_LEVEL_DESTINATIONS = listOf(
     HobTopLevelDestination(
         route = HobRoute.EXPLORE,
-        selectedIcon = R.drawable.ic_explore,
-        unselectedIcon = R.drawable.ic_explore_grey,
+        icon = R.drawable.ic_explore,
         iconTextId = R.string.tab_explore
     ),
     HobTopLevelDestination(
         route = HobRoute.LIKES,
-        selectedIcon = R.drawable.ic_likes,
-        unselectedIcon = R.drawable.ic_likes_grey,
+        icon = R.drawable.ic_likes,
         iconTextId = R.string.tab_likes
     ),
     HobTopLevelDestination(
         route = HobRoute.CHAT,
-        selectedIcon = R.drawable.ic_chat,
-        unselectedIcon = R.drawable.ic_chat_grey,
+        icon = R.drawable.ic_chat,
         iconTextId = R.string.tab_chat
     ),
     HobTopLevelDestination(
         route = HobRoute.PROFILE,
-        selectedIcon = R.drawable.ic_profile,
-        unselectedIcon = R.drawable.ic_profile_grey,
+        icon = R.drawable.ic_profile,
         iconTextId = R.string.tab_profile
     )
 )
