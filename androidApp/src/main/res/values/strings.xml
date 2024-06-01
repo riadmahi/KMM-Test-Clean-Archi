@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_explore">Explore</string>
+    <string name="tab_likes">Likes</string>
+    <string name="tab_chat">Chat</string>
+    <string name="tab_profile">Profile</string>
+</resources>
