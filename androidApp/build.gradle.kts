@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.hilt.android)
     implementation(libs.coil)
+    implementation(libs.swipe.cards)
     kapt(libs.hilt.compiler)
     kapt(libs.hilt.ext.compiler)
     debugImplementation(libs.compose.ui.tooling)

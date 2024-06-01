@@ -1,4 +1,4 @@
-package com.riadmahi.tvshows.ui.theme
+package com.moment.hob.android.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

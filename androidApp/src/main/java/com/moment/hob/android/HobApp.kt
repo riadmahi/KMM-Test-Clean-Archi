@@ -11,7 +11,7 @@ import com.moment.hob.android.ui.navigation.HobBottomNavigationBar
 import com.moment.hob.android.ui.navigation.HobNavHost
 import com.moment.hob.android.ui.navigation.HobNavigationActions
 import com.moment.hob.android.ui.navigation.HobTopLevelDestination
-import com.riadmahi.tvshows.ui.theme.HobTheme
+import com.moment.hob.android.ui.theme.HobTheme
 
 @Composable
 fun HobApp() {
