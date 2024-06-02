@@ -3,6 +3,7 @@ package com.moment.hob.android.ui.likes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,6 +26,7 @@ import com.moment.hob.android.ui.common.PremiumButton
 fun LikesScreen() {
     Column(modifier = Modifier.fillMaxWidth()) {
         LikesHeader()
+        LikesBody()
     }
 }
 
@@ -52,35 +54,42 @@ fun LikesHeader() {
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.outline
         )
-        Box(modifier = Modifier.weight(1f), contentAlignment = Alignment.BottomCenter) {
-            LazyVerticalGrid(
-                modifier = Modifier.fillMaxSize(),
-                columns = GridCells.FixedSize(180.dp),
-                contentPadding = PaddingValues(12.dp)
-            )
-            {
-                item {
-                    BlurredCard(photoUrl = "https://images.unsplash.com/photo-1714138667818-b545353d768a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8")
-                }
-                item {
-                    BlurredCard(photoUrl = "https://images.unsplash.com/photo-1714138667818-b545353d768a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8")
-                }
-                item {
-                    BlurredCard(photoUrl = "https://images.unsplash.com/photo-1714138667818-b545353d768a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8")
-                }
-                item {
-                    BlurredCard(photoUrl = "https://images.unsplash.com/photo-1714138667818-b545353d768a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8")
-                }
-                item {
-                    BlurredCard(photoUrl = "https://images.unsplash.com/photo-1714138667818-b545353d768a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8")
-                }
-            }
-            PremiumButton(
-                modifier = Modifier.fillMaxWidth(0.8f),
-                text = stringResource(id = R.string.become_premium)
-            ) {
 
+    }
+}
+
+@Composable
+fun ColumnScope.LikesBody() {
+    Box(modifier = Modifier.weight(1f), contentAlignment = Alignment.BottomCenter) {
+        LazyVerticalGrid(
+            modifier = Modifier.fillMaxSize(),
+            columns = GridCells.FixedSize(180.dp),
+            contentPadding = PaddingValues(12.dp)
+        )
+        {
+            item {
+                BlurredCard(photoUrl = "https://images.unsplash.com/photo-1714138667818-b545353d768a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8")
             }
+            item {
+                BlurredCard(photoUrl = "https://images.unsplash.com/photo-1714138667818-b545353d768a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8")
+            }
+            item {
+                BlurredCard(photoUrl = "https://images.unsplash.com/photo-1714138667818-b545353d768a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8")
+            }
+            item {
+                BlurredCard(photoUrl = "https://images.unsplash.com/photo-1714138667818-b545353d768a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8")
+            }
+            item {
+                BlurredCard(photoUrl = "https://images.unsplash.com/photo-1714138667818-b545353d768a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8")
+            }
+        }
+        PremiumButton(
+            modifier = Modifier
+                .fillMaxWidth(0.8f)
+                .padding(bottom = 12.dp),
+            text = stringResource(id = R.string.become_premium)
+        ) {
+
         }
     }
 }

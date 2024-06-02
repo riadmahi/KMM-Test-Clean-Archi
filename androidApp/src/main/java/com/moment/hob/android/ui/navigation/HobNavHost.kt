@@ -16,7 +16,7 @@ import com.moment.hob.android.ui.profile.ProfileScreen
 fun HobNavHost(
     modifier: Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = HobRoute.LIKES,
+    startDestination: String = HobRoute.CHAT,
 ) {
     NavHost(
         modifier = modifier,

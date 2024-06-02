@@ -7,4 +7,5 @@
     <string name="likes_header_name">Likes</string>
     <string name="likes_header_description">Go premium and instantly match</string>
     <string name="become_premium">Become premium</string>
+    <string name="chat_header_name">Chat</string>
 </resources>
