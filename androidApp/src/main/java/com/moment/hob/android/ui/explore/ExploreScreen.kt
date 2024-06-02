@@ -10,6 +10,8 @@ import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -17,7 +19,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.aghajari.compose.lazyswipecards.LazySwipeCards
+import com.alexstyl.swipeablecard.Direction
+import com.alexstyl.swipeablecard.ExperimentalSwipeableCardApi
+import com.alexstyl.swipeablecard.rememberSwipeableCardState
+import com.alexstyl.swipeablecard.swipableCard
 import com.moment.hob.android.ui.explore.component.ReactionBar
+import kotlinx.coroutines.launch
 
 val listOfProfile = mutableListOf<String>(
     "https://images.unsplash.com/photo-1620195408655-90b26c8b9608?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -25,8 +32,11 @@ val listOfProfile = mutableListOf<String>(
 )
 
 
+@OptIn(ExperimentalSwipeableCardApi::class)
 @Composable
 fun ExploreScreen() {
+    val scope = rememberCoroutineScope()
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -34,25 +44,36 @@ fun ExploreScreen() {
         contentAlignment = Alignment.BottomCenter
     )
     {
-        LazySwipeCards(
+        val state = rememberSwipeableCardState()
+
+        Box(
             modifier = Modifier
-                .fillMaxSize(),
-            cardColor = Color.Transparent,
-            animationSpec = SpringSpec(),
-            contentPadding = PaddingValues(0.dp),
-            cardShadowElevation = 0.dp,
-            translateSize = 6.dp,
-            ) {
-            // Add items
-            items(listOfProfile) {
-                CardContent(photo = it)
-            }
+                .fillMaxSize()
+                .swipableCard(
+                    state = state,
+                    onSwiped = { direction ->
+                        println("The card was swiped to $direction")
+                    },
+                    onSwipeCancel = {
+                        println("The swiping was cancelled")
+                    }
+                )
+        ) {
+            CardContent(photo = listOfProfile.first())
         }
         ReactionBar(
             onRollback = {},
             onSuperLike = {},
-            onSwipeLeft = {},
-            onSwipeRight = {}
+            onSwipeLeft = {
+                scope.launch {
+                    state.swipe(Direction.Left)
+                }
+            },
+            onSwipeRight = {
+                scope.launch {
+                    state.swipe(Direction.Right)
+                }
+            }
         )
     }
 }

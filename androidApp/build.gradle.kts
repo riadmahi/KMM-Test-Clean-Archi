@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.coil)
     implementation(libs.swipe.cards)
+    implementation(libs.swipecard)
     kapt(libs.hilt.compiler)
     kapt(libs.hilt.ext.compiler)
     debugImplementation(libs.compose.ui.tooling)
