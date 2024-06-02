@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,11 @@
 		480F56032C0CE7E1005D87DC /* BRSonoma-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 480F55FD2C0CE7E1005D87DC /* BRSonoma-Bold.otf */; };
 		480F56042C0CE7E1005D87DC /* BRSonoma-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 480F55FE2C0CE7E1005D87DC /* BRSonoma-Light.otf */; };
 		480F56052C0CE7E1005D87DC /* BRSonoma-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 480F55FF2C0CE7E1005D87DC /* BRSonoma-Black.otf */; };
+		480F56072C0CF734005D87DC /* ExploreScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F56062C0CF734005D87DC /* ExploreScreen.swift */; };
+		480F56092C0CF781005D87DC /* ReactionsBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F56082C0CF781005D87DC /* ReactionsBar.swift */; };
+		480F560B2C0CF95F005D87DC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F560A2C0CF95F005D87DC /* ColorExtension.swift */; };
+		482451B22C0D020000DCF04B /* Shuffle in Frameworks */ = {isa = PBXBuildFile; productRef = 482451B12C0D020000DCF04B /* Shuffle */; };
+		482451B72C0D052600DCF04B /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482451B62C0D052600DCF04B /* SwipeCardView.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +49,10 @@
 		480F55FD2C0CE7E1005D87DC /* BRSonoma-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRSonoma-Bold.otf"; sourceTree = "<group>"; };
 		480F55FE2C0CE7E1005D87DC /* BRSonoma-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRSonoma-Light.otf"; sourceTree = "<group>"; };
 		480F55FF2C0CE7E1005D87DC /* BRSonoma-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BRSonoma-Black.otf"; sourceTree = "<group>"; };
+		480F56062C0CF734005D87DC /* ExploreScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreScreen.swift; sourceTree = "<group>"; };
+		480F56082C0CF781005D87DC /* ReactionsBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionsBar.swift; sourceTree = "<group>"; };
+		480F560A2C0CF95F005D87DC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		482451B62C0D052600DCF04B /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				482451B22C0D020000DCF04B /* Shuffle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +101,9 @@
 		480F55E02C0CE278005D87DC /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				480F56062C0CF734005D87DC /* ExploreScreen.swift */,
+				480F56082C0CF781005D87DC /* ReactionsBar.swift */,
+				482451B62C0D052600DCF04B /* SwipeCardView.swift */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -142,7 +155,6 @@
 			children = (
 				7555FF7D242A565900829871 /* iosApp */,
 				7555FF7C242A565900829871 /* Products */,
-				7555FFB0242A642200829871 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,15 +176,9 @@
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				480F560A2C0CF95F005D87DC /* ColorExtension.swift */,
 			);
 			path = iosApp;
-			sourceTree = "<group>";
-		};
-		7555FFB0242A642200829871 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +199,9 @@
 			dependencies = (
 			);
 			name = iosApp;
+			packageProductDependencies = (
+				482451B12C0D020000DCF04B /* Shuffle */,
+			);
 			productName = iosApp;
 			productReference = 7555FF7B242A565900829871 /* iosApp.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +230,9 @@
 				Base,
 			);
 			mainGroup = 7555FF72242A565900829871;
+			packageReferences = (
+				482451B02C0D020000DCF04B /* XCRemoteSwiftPackageReference "Shuffle" */,
+			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -273,7 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480F56092C0CF781005D87DC /* ReactionsBar.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				482451B72C0D052600DCF04B /* SwipeCardView.swift in Sources */,
+				480F56072C0CF734005D87DC /* ExploreScreen.swift in Sources */,
+				480F560B2C0CF95F005D87DC /* ColorExtension.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				480F55E62C0CE30E005D87DC /* HobTabView.swift in Sources */,
 			);
@@ -478,6 +494,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		482451B02C0D020000DCF04B /* XCRemoteSwiftPackageReference "Shuffle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-gallagher/Shuffle";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		482451B12C0D020000DCF04B /* Shuffle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 482451B02C0D020000DCF04B /* XCRemoteSwiftPackageReference "Shuffle" */;
+			productName = Shuffle;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7555FF73242A565900829871 /* Project object */;
 }

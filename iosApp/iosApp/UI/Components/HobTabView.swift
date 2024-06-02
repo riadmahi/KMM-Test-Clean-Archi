@@ -15,7 +15,7 @@ struct HobTabView: View {
     }
     var body: some View {
         TabView {
-            Text("Explore")
+            ExploreScreen()
                 .tabItem {
                     Image("ic_explore")
                         .renderingMode(.template)
