@@ -73,4 +73,11 @@ val Typography = Typography(
         lineHeight = 16.sp,
         letterSpacing = 0.5.sp
     ),
+    headlineMedium =  TextStyle(
+        fontFamily = BrSonoma,
+        fontWeight = FontWeight.Medium,
+        fontSize = 15.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp
+    ),
 )

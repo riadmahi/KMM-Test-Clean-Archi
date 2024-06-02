@@ -24,7 +24,6 @@ fun ChatCard() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .bounceClick()
             .padding(horizontal = 12.dp, vertical = 8.dp),
         horizontalArrangement = Arrangement.spacedBy(12.dp),
         verticalAlignment = Alignment.CenterVertically

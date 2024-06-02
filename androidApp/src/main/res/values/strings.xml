@@ -8,4 +8,9 @@
     <string name="likes_header_description">Go premium and instantly match</string>
     <string name="become_premium">Become premium</string>
     <string name="chat_header_name">Chat</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="profile_action_edit_profile">Edit your profile</string>
+    <string name="profile_action_manage_my_account">Manage my account</string>
+    <string name="profile_action_app_settings">App settings</string>
+    <string name="profile_action_contact_support">Contact support</string>
 </resources>
