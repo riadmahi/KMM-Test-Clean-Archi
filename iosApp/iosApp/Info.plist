@@ -20,6 +20,15 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BRSonoma-Black.otf</string>
+		<string>BRSonoma-Bold.otf</string>
+		<string>BRSonoma-Medium.otf</string>
+		<string>BRSonoma-SemiBold.otf</string>
+		<string>BRSonoma-Regular.otf</string>
+		<string>BRSonoma-Light.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
