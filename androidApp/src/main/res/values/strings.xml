@@ -4,4 +4,7 @@
     <string name="tab_likes">Likes</string>
     <string name="tab_chat">Chat</string>
     <string name="tab_profile">Profile</string>
+    <string name="likes_header_name">Likes</string>
+    <string name="likes_header_description">Go premium and instantly match</string>
+    <string name="become_premium">Become premium</string>
 </resources>

@@ -52,6 +52,13 @@ val Typography = Typography(
         lineHeight = 16.sp,
         letterSpacing = 0.sp
     ),
+    labelLarge = TextStyle(
+        fontFamily = BrSonoma,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 16.sp,
+        lineHeight = 22.sp,
+        letterSpacing = 0.5.sp
+    ),
     labelMedium = TextStyle(
         fontFamily = BrSonoma,
         fontWeight = FontWeight.SemiBold,
