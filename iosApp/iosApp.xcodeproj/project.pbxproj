@@ -26,7 +26,11 @@
 		4847AF3B2C0DE875005EAA92 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3A2C0DE875005EAA92 /* ProfileScreen.swift */; };
 		4847AF3D2C0DE895005EAA92 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3C2C0DE895005EAA92 /* ChatScreen.swift */; };
 		4847AF3F2C0DEE2D005EAA92 /* ChatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3E2C0DEE2D005EAA92 /* ChatCard.swift */; };
+		48A94DC12C0E4A0E0029AAEC /* HobButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC02C0E4A0E0029AAEC /* HobButton.swift */; };
+		48A94DC32C0E4B8C0029AAEC /* DarkHobButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC22C0E4B8C0029AAEC /* DarkHobButton.swift */; };
+		48A94DC72C0E4DFD0029AAEC /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC62C0E4DFD0029AAEC /* SignInScreen.swift */; };
 		48EA46E62C0E1F1300937DF1 /* PremiumButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA46E52C0E1F1300937DF1 /* PremiumButton.swift */; };
+		48EA46E92C0E476F00937DF1 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA46E82C0E476F00937DF1 /* WelcomeScreen.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +66,11 @@
 		4847AF3A2C0DE875005EAA92 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		4847AF3C2C0DE895005EAA92 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
 		4847AF3E2C0DEE2D005EAA92 /* ChatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCard.swift; sourceTree = "<group>"; };
+		48A94DC02C0E4A0E0029AAEC /* HobButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobButton.swift; sourceTree = "<group>"; };
+		48A94DC22C0E4B8C0029AAEC /* DarkHobButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkHobButton.swift; sourceTree = "<group>"; };
+		48A94DC62C0E4DFD0029AAEC /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
 		48EA46E52C0E1F1300937DF1 /* PremiumButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumButton.swift; sourceTree = "<group>"; };
+		48EA46E82C0E476F00937DF1 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +108,9 @@
 		480F55DF2C0CE26A005D87DC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				48A94DC52C0E4DEC0029AAEC /* SignUp */,
+				48A94DC42C0E4DE40029AAEC /* SignIn */,
+				48EA46E72C0E476200937DF1 /* Welcome */,
 				480F55E32C0CE29A005D87DC /* Profile */,
 				480F55E22C0CE288005D87DC /* Chat */,
 				480F55E12C0CE281005D87DC /* Likes */,
@@ -148,6 +159,8 @@
 			children = (
 				480F55E52C0CE30E005D87DC /* HobTabView.swift */,
 				48EA46E52C0E1F1300937DF1 /* PremiumButton.swift */,
+				48A94DC02C0E4A0E0029AAEC /* HobButton.swift */,
+				48A94DC22C0E4B8C0029AAEC /* DarkHobButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -163,6 +176,29 @@
 				480F55FB2C0CE7E1005D87DC /* BRSonoma-SemiBold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		48A94DC42C0E4DE40029AAEC /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				48A94DC62C0E4DFD0029AAEC /* SignInScreen.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		48A94DC52C0E4DEC0029AAEC /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		48EA46E72C0E476200937DF1 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				48EA46E82C0E476F00937DF1 /* WelcomeScreen.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		7555FF72242A565900829871 = {
@@ -305,9 +341,13 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				482451B72C0D052600DCF04B /* SwipeCardView.swift in Sources */,
 				480F56072C0CF734005D87DC /* ExploreScreen.swift in Sources */,
+				48A94DC72C0E4DFD0029AAEC /* SignInScreen.swift in Sources */,
+				48EA46E92C0E476F00937DF1 /* WelcomeScreen.swift in Sources */,
 				4847AF3B2C0DE875005EAA92 /* ProfileScreen.swift in Sources */,
 				4847AF392C0DD936005EAA92 /* LikesScreen.swift in Sources */,
 				480F560B2C0CF95F005D87DC /* ColorExtension.swift in Sources */,
+				48A94DC32C0E4B8C0029AAEC /* DarkHobButton.swift in Sources */,
+				48A94DC12C0E4A0E0029AAEC /* HobButton.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				48EA46E62C0E1F1300937DF1 /* PremiumButton.swift in Sources */,
 				4847AF3F2C0DEE2D005EAA92 /* ChatCard.swift in Sources */,
