@@ -21,7 +21,7 @@ struct HobTabView: View {
                         .renderingMode(.template)
                     Text("Explore")
             }
-            Text("Likes")
+            LikesScreen()
                 .tabItem {
                     Image("ic_likes")
                         .renderingMode(.template)

@@ -22,6 +22,7 @@
 		480F560B2C0CF95F005D87DC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480F560A2C0CF95F005D87DC /* ColorExtension.swift */; };
 		482451B22C0D020000DCF04B /* Shuffle in Frameworks */ = {isa = PBXBuildFile; productRef = 482451B12C0D020000DCF04B /* Shuffle */; };
 		482451B72C0D052600DCF04B /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482451B62C0D052600DCF04B /* SwipeCardView.swift */; };
+		4847AF392C0DD936005EAA92 /* LikesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF382C0DD936005EAA92 /* LikesScreen.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		480F56082C0CF781005D87DC /* ReactionsBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionsBar.swift; sourceTree = "<group>"; };
 		480F560A2C0CF95F005D87DC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		482451B62C0D052600DCF04B /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
+		4847AF382C0DD936005EAA92 /* LikesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesScreen.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		480F55E12C0CE281005D87DC /* Likes */ = {
 			isa = PBXGroup;
 			children = (
+				4847AF382C0DD936005EAA92 /* LikesScreen.swift */,
 			);
 			path = Likes;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				482451B72C0D052600DCF04B /* SwipeCardView.swift in Sources */,
 				480F56072C0CF734005D87DC /* ExploreScreen.swift in Sources */,
+				4847AF392C0DD936005EAA92 /* LikesScreen.swift in Sources */,
 				480F560B2C0CF95F005D87DC /* ColorExtension.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				480F55E62C0CE30E005D87DC /* HobTabView.swift in Sources */,
