@@ -27,14 +27,14 @@ struct HobTabView: View {
                         .renderingMode(.template)
                     Text("Likes")
             }
-            Text("Chat")
+            ChatScreen()
                 .tabItem {
                     Image("ic_chat")
                         .renderingMode(.template)
                     Text("Chat")
 
             }
-            Text("Profile")
+            ProfileScreen()
                 .tabItem {
                     Image("ic_profile")
                         .renderingMode(.template)

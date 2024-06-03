@@ -11,8 +11,10 @@ import SwiftUI
 struct LikesScreen: View {
     var body: some View {
         VStack {
-            LikesHeader()
-            LikesContent()
+            ScrollView {
+                LikesHeader()
+                LikesContent()
+            }
         }
     }
 }
@@ -38,7 +40,6 @@ struct LikesHeader: View {
 
 struct LikesContent: View {
     var body: some View {
-        ScrollView {
             Grid {
                 GridRow {
                     LikesCard(url: "https://images.unsplash.com/photo-1717278920189-f69e4697dcc1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D")
@@ -52,9 +53,8 @@ struct LikesContent: View {
                 }
             }
         }
-
-    }
 }
+    
 
 struct LikesCard: View {
     var url: String
