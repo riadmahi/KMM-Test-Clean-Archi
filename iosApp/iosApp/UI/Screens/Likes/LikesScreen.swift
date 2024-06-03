@@ -21,20 +21,25 @@ struct LikesScreen: View {
 
 struct LikesHeader: View {
     var body: some View {
-        HStack {
-            Text("Likes")
-                .font(Font.custom("BRSonoma-SemiBold", size: 18))
-            
-            ZStack {
-                Circle()
-                    .frame(width: 18)
-                    .foregroundColor(Color("AccentColor"))
-                Text("6")
-                    .foregroundColor(.white)
-                    .font(Font.custom("BRSonoma-Bold", size: 12))
+        VStack {
+            HStack {
+                Text("Likes")
+                    .font(Font.custom("BRSonoma-SemiBold", size: 18))
+                
+                ZStack {
+                    Circle()
+                        .frame(width: 18)
+                        .foregroundColor(Color("AccentColor"))
+                    Text("6")
+                        .foregroundColor(.white)
+                        .font(Font.custom("BRSonoma-Bold", size: 12))
+                }
             }
-        }.padding(.vertical, 12)
+            Text("Go premium and instantly match")
+                .font(Font.custom("BRSonoma-Regular", size: 15))
 
+            
+        }.padding(.vertical, 12)
     }
 }
 
