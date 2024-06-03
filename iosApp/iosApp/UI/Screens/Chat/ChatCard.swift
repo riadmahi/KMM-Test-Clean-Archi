@@ -20,14 +20,14 @@ struct ChatCard: View {
                     .resizable()
                     .scaledToFill()
             }
-            .frame(width: 65, height: 65)
+            .frame(width: 60, height: 60)
             .clipShape(Circle())
             
             VStack(alignment: .leading, spacing: 6) {
                 Text(name)
-                    .font(Font.custom("BRSonoma-SemiBold", size: 18))
+                    .font(Font.custom("BRSonoma-SemiBold", size: 16))
                 Text(lastMessage)
-                    .font(Font.custom("BRSonoma-Regular", size: 17))
+                    .font(Font.custom("BRSonoma-Regular", size: 14))
                     .foregroundColor(Color("PlaceholderColor"))
                     .frame(maxWidth: .infinity, alignment: .leading)
             }

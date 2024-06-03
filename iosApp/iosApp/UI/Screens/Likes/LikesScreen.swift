@@ -10,12 +10,18 @@ import SwiftUI
 
 struct LikesScreen: View {
     var body: some View {
-        VStack {
+        ZStack {
             ScrollView {
                 LikesHeader()
                 LikesContent()
             }
+            VStack {
+                Spacer()
+                PremiumButton(text: "Become premium")
+            }.padding(.bottom, 24)
         }
+        
+        
     }
 }
 

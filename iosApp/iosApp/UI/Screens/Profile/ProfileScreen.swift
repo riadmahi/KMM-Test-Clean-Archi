@@ -69,7 +69,7 @@ struct ProfileActionCard: View {
     var body: some View {
         HStack {
             Text(actionName)
-                .font(Font.custom("BRSonoma-Medium", size: 18))
+                .font(Font.custom("BRSonoma-Medium", size: 16))
                 .frame(width: .infinity, alignment: .leading)
             Spacer()
             Image("ic_arrow_right")

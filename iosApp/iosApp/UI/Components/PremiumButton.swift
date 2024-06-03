@@ -23,7 +23,7 @@ struct PremiumButton: View {
                     LinearGradient(gradient: Gradient(colors: [Color(hex:0xF5BA54), Color(hex: 0xF5CD40), Color(hex: 0xF5BA54), Color(hex: 0xC89743)]), startPoint: .leading, endPoint: .trailing)
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 50))
-                .font(Font.custom("BRSonoma-SemiBold", size: 18))
+                .font(Font.custom("BRSonoma-SemiBold", size: 16))
             }
     }
 }
