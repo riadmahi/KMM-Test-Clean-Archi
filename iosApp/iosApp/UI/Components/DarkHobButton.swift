@@ -11,10 +11,10 @@ import SwiftUI
 struct DarkHobButton: View {
     var text: String
     var width: CGFloat? = nil
+    var action: () -> Void
+
     var body: some View {
-        Button {
-            
-        } label: {
+       Button(action: action) {
             Text(text)
                 .foregroundColor(.white)
                 .padding(.horizontal, 32)
@@ -29,6 +29,6 @@ struct DarkHobButton: View {
 
 
 #Preview {
-    DarkHobButton(text: "Hello", width: 250)
+    DarkHobButton(text: "Hello", width: 250, action:  {})
 }
 

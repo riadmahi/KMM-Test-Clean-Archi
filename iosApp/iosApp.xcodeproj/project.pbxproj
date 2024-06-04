@@ -26,6 +26,7 @@
 		4847AF3B2C0DE875005EAA92 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3A2C0DE875005EAA92 /* ProfileScreen.swift */; };
 		4847AF3D2C0DE895005EAA92 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3C2C0DE895005EAA92 /* ChatScreen.swift */; };
 		4847AF3F2C0DEE2D005EAA92 /* ChatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3E2C0DEE2D005EAA92 /* ChatCard.swift */; };
+		485814BB2C0EECD1004BCCE1 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485814BA2C0EECD1004BCCE1 /* SignUpScreen.swift */; };
 		48A94DC12C0E4A0E0029AAEC /* HobButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC02C0E4A0E0029AAEC /* HobButton.swift */; };
 		48A94DC32C0E4B8C0029AAEC /* DarkHobButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC22C0E4B8C0029AAEC /* DarkHobButton.swift */; };
 		48A94DC72C0E4DFD0029AAEC /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC62C0E4DFD0029AAEC /* SignInScreen.swift */; };
@@ -66,6 +67,7 @@
 		4847AF3A2C0DE875005EAA92 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		4847AF3C2C0DE895005EAA92 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
 		4847AF3E2C0DEE2D005EAA92 /* ChatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCard.swift; sourceTree = "<group>"; };
+		485814BA2C0EECD1004BCCE1 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
 		48A94DC02C0E4A0E0029AAEC /* HobButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobButton.swift; sourceTree = "<group>"; };
 		48A94DC22C0E4B8C0029AAEC /* DarkHobButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkHobButton.swift; sourceTree = "<group>"; };
 		48A94DC62C0E4DFD0029AAEC /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		48A94DC52C0E4DEC0029AAEC /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				485814BA2C0EECD1004BCCE1 /* SignUpScreen.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				480F56072C0CF734005D87DC /* ExploreScreen.swift in Sources */,
 				48A94DC72C0E4DFD0029AAEC /* SignInScreen.swift in Sources */,
 				48EA46E92C0E476F00937DF1 /* WelcomeScreen.swift in Sources */,
+				485814BB2C0EECD1004BCCE1 /* SignUpScreen.swift in Sources */,
 				4847AF3B2C0DE875005EAA92 /* ProfileScreen.swift in Sources */,
 				4847AF392C0DD936005EAA92 /* LikesScreen.swift in Sources */,
 				480F560B2C0CF95F005D87DC /* ColorExtension.swift in Sources */,

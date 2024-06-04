@@ -1,19 +1,19 @@
 //
-//  SignInScreen.swift
+//  SignUpScreen.swift
 //  iosApp
 //
-//  Created by Riad MAHI on 03/06/2024.
+//  Created by Riad MAHI on 04/06/2024.
 //  Copyright © 2024 orgName. All rights reserved.
 //
 
 import SwiftUI
 
-struct SignInScreen: View {
+struct SignUpScreen: View {
     var body: some View {
-        Text("Sign in")
+        Text("Sign up")
     }
 }
 
 #Preview {
-    SignInScreen()
+    SignUpScreen()
 }
