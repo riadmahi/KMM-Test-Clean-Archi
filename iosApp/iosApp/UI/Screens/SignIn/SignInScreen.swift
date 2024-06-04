@@ -18,6 +18,7 @@ struct SignInScreen: View {
             Text("Heureux de vous revoir! 👋")
                 .font(Font.custom("BRSonoma-SemiBold", size: 24))
                 .frame(maxWidth: .infinity, alignment: .leading)
+            
             VStack(spacing: 24) {
                 TextField(
                     "Email",

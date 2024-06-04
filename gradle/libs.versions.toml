@@ -13,6 +13,7 @@ androidxHiltNavigationCompose = "1.1.0"
 swipeCards = "1.0.1"
 coil = "2.6.0"
 swipeCard = "0.1.0"
+ktor = "2.3.11"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -32,6 +33,7 @@ hilt-ext-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hil
 coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 swipe-cards = { module = "io.github.aghajari:LazySwipeCards", version.ref = "swipeCards" }
 swipecard = { module = "com.alexstyl.swipeablecard:swipeablecard", version.ref = "swipeCard" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
