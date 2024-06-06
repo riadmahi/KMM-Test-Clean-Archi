@@ -10,9 +10,9 @@ import SwiftUI
 
 struct SignInScreen: View {
     @State private var email: String = ""
-    
     @State private var password: String = ""
-    
+    @State var isPasswordVisible: Bool = false
+
     var body: some View {
         VStack(spacing: 42) {
             Text("Heureux de vous revoir! 👋")
@@ -33,17 +33,45 @@ struct SignInScreen: View {
                 .accentColor(Color("AccentColor"))
 
                 
-                TextField(
-                    "Password",
-                    text: $email
-                )
-                .padding(.vertical, 18)
-                .padding(.horizontal, 16)
-                .background(Color("SecondBgColor"))
-                .textInputAutocapitalization(.never)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-                .font(Font.custom("BRSonoma-Regular", size: 16))
-                .accentColor(Color("AccentColor"))
+                if isPasswordVisible {
+                    TextField(
+                        "Password",
+                        text: $password
+                    )
+                    .padding(.vertical, 18)
+                    .padding(.horizontal, 16)
+                    .background(Color("SecondBgColor"))
+                    .textInputAutocapitalization(.never)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .font(Font.custom("BRSonoma-Regular", size: 16))
+                    .accentColor(Color("AccentColor"))
+                    .overlay(alignment: .trailing) {
+                        Image(systemName: isPasswordVisible ? "eye.fill" : "eye.slash.fill")
+                            .padding()
+                            .onTapGesture {
+                                isPasswordVisible.toggle()
+                            }
+                    }
+                } else {
+                    SecureField(
+                        "Password",
+                        text: $password
+                    )
+                    .padding(.vertical, 18)
+                    .padding(.horizontal, 16)
+                    .background(Color("SecondBgColor"))
+                    .textInputAutocapitalization(.never)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .font(Font.custom("BRSonoma-Regular", size: 16))
+                    .accentColor(Color("AccentColor"))
+                    .overlay(alignment: .trailing) {
+                        Image(systemName: isPasswordVisible ? "eye.fill" : "eye.slash.fill")
+                            .padding()
+                            .onTapGesture {
+                                isPasswordVisible.toggle()
+                            }
+                    }
+                }
 
                 
                 Text("Forgot your password?").frame(maxWidth: .infinity, alignment: .trailing)                        .font(Font.custom("BRSonoma-Regular", size: 14))

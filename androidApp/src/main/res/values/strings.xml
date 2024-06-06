@@ -13,4 +13,9 @@
     <string name="profile_action_manage_my_account">Manage my account</string>
     <string name="profile_action_app_settings">App settings</string>
     <string name="profile_action_contact_support">Contact support</string>
+    <string name="welcome_motto">L’app muslim pour trouver sa moitiée</string>
+    <string name="signin_btn">Sign in</string>
+    <string name="signup_btn">Sign up</string>
+    <string name="nav_indicator_sign_in">Sign In</string>
+    <string name="nav_indicator_sign_up">Sign Up</string>
 </resources>

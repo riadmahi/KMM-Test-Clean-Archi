@@ -14,6 +14,7 @@ swipeCards = "1.0.1"
 coil = "2.6.0"
 swipeCard = "0.1.0"
 ktor = "2.3.11"
+lifecycleViewmodelCompose = "2.8.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -34,6 +35,7 @@ coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 swipe-cards = { module = "io.github.aghajari:LazySwipeCards", version.ref = "swipeCards" }
 swipecard = { module = "com.alexstyl.swipeablecard:swipeablecard", version.ref = "swipeCard" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycleViewmodelCompose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

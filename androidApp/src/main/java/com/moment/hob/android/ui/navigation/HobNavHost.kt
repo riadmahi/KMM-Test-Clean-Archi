@@ -10,19 +10,24 @@ import com.moment.hob.android.ui.chat.ChatScreen
 import com.moment.hob.android.ui.explore.ExploreScreen
 import com.moment.hob.android.ui.likes.LikesScreen
 import com.moment.hob.android.ui.profile.ProfileScreen
+import com.moment.hob.android.ui.welcome.WelcomeScreen
 
 
 @Composable
 fun HobNavHost(
     modifier: Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = HobRoute.PROFILE,
+    startDestination: String = HobRoute.WELCOME,
 ) {
     NavHost(
         modifier = modifier,
         navController = navController,
         startDestination = startDestination
     ) {
+        composable(HobRoute.WELCOME) {
+            WelcomeScreen()
+        }
+
         composable(HobRoute.EXPLORE) {
             ExploreScreen()
         }

@@ -10,6 +10,7 @@ object HobRoute {
     const val LIKES = "Likes"
     const val CHAT = "Chat"
     const val PROFILE = "Profile"
+    const val WELCOME = "Welcome"
 }
 
 data class HobTopLevelDestination(
