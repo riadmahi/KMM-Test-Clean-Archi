@@ -12,7 +12,7 @@ struct SignInScreen: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State var isPasswordVisible: Bool = false
-
+    
     var body: some View {
         VStack(spacing: 42) {
             Text("Heureux de vous revoir! 👋")
@@ -27,9 +27,10 @@ struct SignInScreen: View {
                     isPasswordVisible: $isPasswordVisible
                 )
                 
-                Text("Forgot your password?").frame(maxWidth: .infinity, alignment: .trailing)                        .font(Font.custom("BRSonoma-Regular", size: 14))
+                Text("Forgot your password?")
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .font(Font.custom("BRSonoma-Regular", size: 14))
                     .foregroundColor(Color("PlaceholderColor"))
-                
             }
             HobButton(text: "Sign in", width: UIScreen.main.bounds.width - 32) {
                 

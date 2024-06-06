@@ -10,6 +10,8 @@ import com.moment.hob.android.ui.chat.ChatScreen
 import com.moment.hob.android.ui.explore.ExploreScreen
 import com.moment.hob.android.ui.likes.LikesScreen
 import com.moment.hob.android.ui.profile.ProfileScreen
+import com.moment.hob.android.ui.signin.SignInScreen
+import com.moment.hob.android.ui.signup.SignUpScreen
 import com.moment.hob.android.ui.welcome.WelcomeScreen
 
 
@@ -17,7 +19,7 @@ import com.moment.hob.android.ui.welcome.WelcomeScreen
 fun HobNavHost(
     modifier: Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = HobRoute.WELCOME,
+    startDestination: String = HobRoute.EXPLORE,
 ) {
     NavHost(
         modifier = modifier,
@@ -25,7 +27,22 @@ fun HobNavHost(
         startDestination = startDestination
     ) {
         composable(HobRoute.WELCOME) {
-            WelcomeScreen()
+            WelcomeScreen(
+                navigateToSignIn = { navController.navigate(HobRoute.SIGN_IN) },
+                navigateToSignUp = { navController.navigate(HobRoute.SIGN_UP) }
+            )
+        }
+
+        composable(HobRoute.SIGN_IN) {
+            SignInScreen(
+                navigateBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(HobRoute.SIGN_UP) {
+            SignUpScreen(
+                navigateBack = { navController.popBackStack() }
+            )
         }
 
         composable(HobRoute.EXPLORE) {

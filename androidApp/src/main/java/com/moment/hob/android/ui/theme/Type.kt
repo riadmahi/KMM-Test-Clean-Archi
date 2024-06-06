@@ -27,7 +27,7 @@ val Typography = Typography(
     bodyMedium = TextStyle(
         fontFamily = BrSonoma,
         fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
+        fontSize = 15.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp,
     ),

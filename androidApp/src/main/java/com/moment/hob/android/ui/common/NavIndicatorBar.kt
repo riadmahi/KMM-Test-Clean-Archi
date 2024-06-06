@@ -1,6 +1,7 @@
 package com.moment.hob.android.ui.common
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,7 +21,8 @@ import com.moment.hob.android.R
 
 @Composable
 fun NavIndicatorBar(
-    text: String
+    text: String,
+    onBack: () -> Unit
 ) {
     Row(
         modifier = Modifier
@@ -31,7 +33,9 @@ fun NavIndicatorBar(
         horizontalArrangement = Arrangement.spacedBy(12.dp)
     ) {
         Icon(
-            modifier = Modifier.size(28.dp),
+            modifier = Modifier.size(28.dp).clickable {
+                onBack()
+            },
             painter = painterResource(id = R.drawable.ic_arrow_left),
             contentDescription = null,
             tint = MaterialTheme.colorScheme.primary
@@ -46,4 +50,4 @@ fun NavIndicatorBar(
 
 @Composable
 @Preview
-fun NavIndicatorBarPreview() = NavIndicatorBar("Se connecter")
+fun NavIndicatorBarPreview() = NavIndicatorBar("Se connecter") {}

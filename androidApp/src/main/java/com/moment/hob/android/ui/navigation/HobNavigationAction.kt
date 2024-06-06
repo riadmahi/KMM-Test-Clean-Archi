@@ -11,6 +11,8 @@ object HobRoute {
     const val CHAT = "Chat"
     const val PROFILE = "Profile"
     const val WELCOME = "Welcome"
+    const val SIGN_IN = "Signin"
+    const val SIGN_UP = "Signup"
 }
 
 data class HobTopLevelDestination(

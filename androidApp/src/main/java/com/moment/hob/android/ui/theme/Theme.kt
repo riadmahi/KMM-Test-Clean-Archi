@@ -3,18 +3,20 @@ package com.moment.hob.android.ui.theme
 import android.app.Activity
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 
-private val ColorScheme = darkColorScheme(
+private val ColorScheme = lightColorScheme(
     primary = Purple,
     onPrimary = Color.White,
     background = Color.White,
     outline = CadetBlue,
     primaryContainer = WhiteSmoke,
+    secondaryContainer = WhiteSmoke,
     onBackground = Color.Black,
     onSurface = Color.Black,
     surface = Color.White

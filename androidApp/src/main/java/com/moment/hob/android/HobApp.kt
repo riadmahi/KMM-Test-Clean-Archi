@@ -11,6 +11,7 @@ import com.moment.hob.android.ui.navigation.HobBottomNavigationBar
 import com.moment.hob.android.ui.navigation.HobNavHost
 import com.moment.hob.android.ui.navigation.HobNavigationActions
 import com.moment.hob.android.ui.navigation.HobTopLevelDestination
+import com.moment.hob.android.ui.navigation.TOP_LEVEL_DESTINATIONS
 import com.moment.hob.android.ui.theme.HobTheme
 
 @Composable
@@ -36,9 +37,11 @@ fun HobAppContent(
 ) {
     Column {
         HobNavHost(modifier = Modifier.weight(1f), navController = navController)
-        HobBottomNavigationBar(
-            navController = navController,
-            navigateToTopLevelDestination = navigateToTopLevelDestination
-        )
+        if (TOP_LEVEL_DESTINATIONS.any { it.route == navController.currentDestination?.route }) {
+            HobBottomNavigationBar(
+                navController = navController,
+                navigateToTopLevelDestination = navigateToTopLevelDestination
+            )
+        }
     }
 }
