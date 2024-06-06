@@ -28,7 +28,6 @@ struct WelcomeScreen: View {
                         .frame(width: UIScreen.main.bounds.width - 32, alignment: .leading)
                         .padding(.bottom, 18)
                     
-                    
                     HobButton(text: "Sign in", width: UIScreen.main.bounds.width - 32) {
                         navigateToSignIn = true
                     }
@@ -36,7 +35,7 @@ struct WelcomeScreen: View {
                         isPresented: $navigateToSignIn,
                         destination: { SignInScreen()}
                     )
-
+                    
                     DarkHobButton(text: "Sign up", width: UIScreen.main.bounds.width - 32) {
                         navigateToSignUp = true
                     }

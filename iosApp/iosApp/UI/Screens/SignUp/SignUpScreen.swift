@@ -20,59 +20,12 @@ struct SignUpScreen:  View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             VStack(spacing: 24) {
-                TextField(
-                    "Email",
-                    text: $email
+                HobTextField(hint: "Email", text: $email)
+                SecureHobTextField(
+                    hint: "Password",
+                    password: $password,
+                    isPasswordVisible: $isPasswordVisible
                 )
-                .padding(.vertical, 18)
-                .padding(.horizontal, 16)
-                .background(Color("SecondBgColor"))
-                .textInputAutocapitalization(.never)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-                .font(Font.custom("BRSonoma-Regular", size: 16))
-                .accentColor(Color("AccentColor"))
-                
-                if isPasswordVisible {
-                    TextField(
-                        "Password",
-                        text: $password
-                    )
-                    .padding(.vertical, 18)
-                    .padding(.horizontal, 16)
-                    .background(Color("SecondBgColor"))
-                    .textInputAutocapitalization(.never)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .font(Font.custom("BRSonoma-Regular", size: 16))
-                    .accentColor(Color("AccentColor"))
-                    .overlay(alignment: .trailing) {
-                        Image(systemName: isPasswordVisible ? "eye.fill" : "eye.slash.fill")
-                            .padding()
-                            .onTapGesture {
-                                isPasswordVisible.toggle()
-                            }
-                    }
-                } else {
-                    SecureField(
-                        "Password",
-                        text: $password
-                    )
-                    .padding(.vertical, 18)
-                    .padding(.horizontal, 16)
-                    .background(Color("SecondBgColor"))
-                    .textInputAutocapitalization(.never)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                    .font(Font.custom("BRSonoma-Regular", size: 16))
-                    .accentColor(Color("AccentColor"))
-                    .overlay(alignment: .trailing) {
-                        Image(systemName: isPasswordVisible ? "eye.fill" : "eye.slash.fill")
-                            .padding()
-                            .onTapGesture {
-                                isPasswordVisible.toggle()
-                            }
-                    }
-                }
-                
-                
             }
             HobButton(text: "Sign up", width: UIScreen.main.bounds.width - 32) {
                 

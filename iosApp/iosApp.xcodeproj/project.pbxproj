@@ -30,6 +30,8 @@
 		48A94DC12C0E4A0E0029AAEC /* HobButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC02C0E4A0E0029AAEC /* HobButton.swift */; };
 		48A94DC32C0E4B8C0029AAEC /* DarkHobButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC22C0E4B8C0029AAEC /* DarkHobButton.swift */; };
 		48A94DC72C0E4DFD0029AAEC /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC62C0E4DFD0029AAEC /* SignInScreen.swift */; };
+		48C3428A2C11DACF00CB108C /* HobTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C342892C11DACF00CB108C /* HobTextField.swift */; };
+		48C3428C2C11DBE700CB108C /* SecureHobTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C3428B2C11DBE700CB108C /* SecureHobTextField.swift */; };
 		48EA46E62C0E1F1300937DF1 /* PremiumButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA46E52C0E1F1300937DF1 /* PremiumButton.swift */; };
 		48EA46E92C0E476F00937DF1 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA46E82C0E476F00937DF1 /* WelcomeScreen.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
@@ -71,6 +73,8 @@
 		48A94DC02C0E4A0E0029AAEC /* HobButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobButton.swift; sourceTree = "<group>"; };
 		48A94DC22C0E4B8C0029AAEC /* DarkHobButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkHobButton.swift; sourceTree = "<group>"; };
 		48A94DC62C0E4DFD0029AAEC /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
+		48C342892C11DACF00CB108C /* HobTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobTextField.swift; sourceTree = "<group>"; };
+		48C3428B2C11DBE700CB108C /* SecureHobTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureHobTextField.swift; sourceTree = "<group>"; };
 		48EA46E52C0E1F1300937DF1 /* PremiumButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumButton.swift; sourceTree = "<group>"; };
 		48EA46E82C0E476F00937DF1 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +167,8 @@
 				48EA46E52C0E1F1300937DF1 /* PremiumButton.swift */,
 				48A94DC02C0E4A0E0029AAEC /* HobButton.swift */,
 				48A94DC22C0E4B8C0029AAEC /* DarkHobButton.swift */,
+				48C342892C11DACF00CB108C /* HobTextField.swift */,
+				48C3428B2C11DBE700CB108C /* SecureHobTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -353,7 +359,9 @@
 				48A94DC32C0E4B8C0029AAEC /* DarkHobButton.swift in Sources */,
 				48A94DC12C0E4A0E0029AAEC /* HobButton.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
+				48C3428C2C11DBE700CB108C /* SecureHobTextField.swift in Sources */,
 				48EA46E62C0E1F1300937DF1 /* PremiumButton.swift in Sources */,
+				48C3428A2C11DACF00CB108C /* HobTextField.swift in Sources */,
 				4847AF3F2C0DEE2D005EAA92 /* ChatCard.swift in Sources */,
 				480F55E62C0CE30E005D87DC /* HobTabView.swift in Sources */,
 			);
