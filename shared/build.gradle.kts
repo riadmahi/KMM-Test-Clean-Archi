@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.realm)
 }
 
 kotlin {
@@ -27,6 +29,10 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.ktor.client.core)
             //implementation(libs.moko.core)
+            implementation(libs.kotlin.serialization)
+            implementation(libs.ktor.serialization)
+            implementation(libs.ktor.content.negotiation)
+            implementation(libs.realm)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

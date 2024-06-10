@@ -6,4 +6,6 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform).apply(false)
     alias(libs.plugins.kapt) apply false
     alias(libs.plugins.hilt) apply false
+    alias(libs.plugins.kotlinSerialization) apply false
+    alias(libs.plugins.realm) apply false
 }
