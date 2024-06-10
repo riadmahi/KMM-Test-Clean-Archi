@@ -7,12 +7,14 @@
 //
 
 import SwiftUI
+import shared
 
 struct SignInScreen: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State var isPasswordVisible: Bool = false
-    
+    @StateObject private var viewModel = ViewModel()
+
     var body: some View {
         VStack(spacing: 42) {
             Text("Heureux de vous revoir! 👋")
@@ -32,18 +34,50 @@ struct SignInScreen: View {
                     .font(Font.custom("BRSonoma-Regular", size: 14))
                     .foregroundColor(Color("PlaceholderColor"))
             }
-            HobButton(text: "Sign in", width: UIScreen.main.bounds.width - 32) {
-                
+            
+            
+            if viewModel.uistate is SignInUiStateLoading {
+                ProgressView()
+            } else {
+                HobButton(text: "Sign in", width: UIScreen.main.bounds.width - 32) {
+                    viewModel.signIn(email: email, password: password)
+                }
+            }
+            if let errorState = viewModel.uistate as? SignInUiStateError {
+                ErrorCard(error: errorState.cause)
             }
             Spacer()
         }.frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, 24)
             .padding(.vertical, 32)
-        
-        
     }
 }
 
-#Preview {
-    SignInScreen()
+extension SignInScreen {
+    @MainActor
+    class ViewModel: ObservableObject {
+        @Published var uistate: SignInUiState = SignInUiStateNone()
+        private var repository: HobRepository
+
+        init(repository: HobRepository = RepositoryProvider.shared.hobRepository) {
+            self.repository = repository
+        }
+
+        func signIn(email: String, password: String) {
+            self.uistate = SignInUiStateLoading()
+            Task {
+                do {
+                    let result = try await repository.signIn(email: email, password: password)
+                    DispatchQueue.main.async {
+                        self.uistate = result
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        self.uistate = SignInUiStateError(cause: error.localizedDescription)
+                    }
+                }
+            }
+        }
+    }
 }
+

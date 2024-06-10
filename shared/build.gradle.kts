@@ -26,6 +26,9 @@ kotlin {
     }
 
     sourceSets {
+        androidMain.dependencies {
+            implementation(libs.ktor.client.okhttp)
+        }
         commonMain.dependencies {
             implementation(libs.ktor.client.core)
             //implementation(libs.moko.core)
@@ -33,6 +36,9 @@ kotlin {
             implementation(libs.ktor.serialization)
             implementation(libs.ktor.content.negotiation)
             implementation(libs.realm)
+        }
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

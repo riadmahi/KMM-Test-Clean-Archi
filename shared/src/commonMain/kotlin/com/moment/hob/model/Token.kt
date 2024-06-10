@@ -4,4 +4,9 @@ import io.realm.kotlin.types.RealmObject
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Token(val refresh: String, val access: String): RealmObject
+open class Token(
+    var refresh: String,
+    var access: String
+) : RealmObject {
+    constructor() : this("", "")
+}

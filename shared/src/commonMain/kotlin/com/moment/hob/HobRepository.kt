@@ -1,12 +1,10 @@
 package com.moment.hob
 
 import com.moment.hob.model.Token
+import com.moment.hob.state.SignInUiState
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import io.realm.kotlin.ext.query
-import io.realm.kotlin.notifications.ResultsChange
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 
 class HobRepository(private val api: HobApi) {
 
@@ -15,14 +13,15 @@ class HobRepository(private val api: HobApi) {
         Realm.open(configuration)
     }
 
-    suspend fun signIn(email: String, password: String): Boolean {
+    suspend fun signIn(email: String, password: String): SignInUiState {
         val result = api.signIn(email, password)
-        if (result is Result.Success) {
+        return if (result is Result.Success) {
             removeToken()
             addToken(result.data)
-            return true
+            SignInUiState.Success
+        } else {
+            SignInUiState.Error("Sign in failed")
         }
-        return false
     }
 
     private fun addToken(token: Token) {
