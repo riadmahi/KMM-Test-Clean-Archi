@@ -36,6 +36,7 @@ kotlin {
             implementation(libs.ktor.serialization)
             implementation(libs.ktor.content.negotiation)
             implementation(libs.realm)
+            api(libs.logging)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)

@@ -25,7 +25,7 @@ fun ErrorCard(
         modifier = modifier
             .fillMaxWidth()
             .defaultMinSize(minHeight = 50.dp),
-        shape = RoundedCornerShape(5.dp),
+        shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(
             containerColor = Color(0xFFEC3446)
         )

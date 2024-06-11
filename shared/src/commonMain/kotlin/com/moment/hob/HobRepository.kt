@@ -5,6 +5,7 @@ import com.moment.hob.state.SignInUiState
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import io.realm.kotlin.ext.query
+import org.lighthousegames.logging.logging
 
 class HobRepository(private val api: HobApi) {
 
@@ -24,6 +25,13 @@ class HobRepository(private val api: HobApi) {
         }
     }
 
+    suspend fun checkToken(): Boolean {
+        val token = getToken() ?: return false
+        val result = api.checkToken(token.access)
+        return result is Result.Success
+    }
+
+
     private fun addToken(token: Token) {
         realm.writeBlocking {
             copyToRealm(token)
@@ -37,5 +45,10 @@ class HobRepository(private val api: HobApi) {
         }
     }
 
-    fun getToken(): Token = realm.query<Token>().find().first()
+    private fun getToken(): Token? = realm.query<Token>().find().firstOrNull()
+
+    companion object {
+        val log = logging()
+    }
+
 }

@@ -8,12 +8,15 @@
 
 import SwiftUI
 import shared
+import SwiftUI
 
 struct SignInScreen: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State var isPasswordVisible: Bool = false
     @StateObject private var viewModel = ViewModel()
+    @State private var navigateToHobTabView: Bool = false
+    @EnvironmentObject var navGraph: NavGraph
 
     var body: some View {
         VStack(spacing: 42) {
@@ -35,7 +38,6 @@ struct SignInScreen: View {
                     .foregroundColor(Color("PlaceholderColor"))
             }
             
-            
             if viewModel.uistate is SignInUiStateLoading {
                 ProgressView()
             } else {
@@ -47,9 +49,15 @@ struct SignInScreen: View {
                 ErrorCard(error: errorState.cause)
             }
             Spacer()
-        }.frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 24)
-            .padding(.vertical, 32)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 24)
+        .padding(.vertical, 32)
+        .onReceive(viewModel.$uistate) { state in
+            if state is SignInUiStateSuccess {
+                navGraph.currentView =  .home
+            }
+        }
     }
 }
 
@@ -58,11 +66,11 @@ extension SignInScreen {
     class ViewModel: ObservableObject {
         @Published var uistate: SignInUiState = SignInUiStateNone()
         private var repository: HobRepository
-
+        
         init(repository: HobRepository = RepositoryProvider.shared.hobRepository) {
             self.repository = repository
         }
-
+        
         func signIn(email: String, password: String) {
             self.uistate = SignInUiStateLoading()
             Task {
@@ -80,4 +88,3 @@ extension SignInScreen {
         }
     }
 }
-

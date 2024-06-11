@@ -22,9 +22,9 @@ import com.moment.hob.android.ui.welcome.WelcomeScreen
 fun HobNavHost(
     modifier: Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = HobRoute.EXPLORE,
+    startDestination: String = HobRoute.WELCOME,
+    hobRepository: HobRepository
 ) {
-    val hobRepository = HobRepository(HobApi())
     NavHost(
         modifier = modifier,
         navController = navController,
@@ -40,7 +40,14 @@ fun HobNavHost(
         composable(HobRoute.SIGN_IN) {
             SignInScreen(
                 viewModel = SignInViewModel(hobRepository),
-                navigateBack = { navController.popBackStack() }
+                navigateBack = { navController.popBackStack() },
+                navigateToExplore = {
+                    navController.navigate(HobRoute.EXPLORE) {
+                        popUpTo(HobRoute.WELCOME) {
+                            inclusive = true
+                        }
+                    }
+                }
             )
         }
 

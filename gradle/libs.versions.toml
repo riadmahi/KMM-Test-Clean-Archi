@@ -18,6 +18,7 @@ lifecycleViewmodelCompose = "2.8.0"
 kotlinSerialization = "1.7.3"
 ksp = "1.9.22-1.0.18"
 realm = "1.16.0"
+logging = "1.4.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -45,6 +46,7 @@ ktor-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation",
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 realm = { module = "io.realm.kotlin:library-base", version.ref = "realm" }
+logging = { module = "org.lighthousegames:logging", version.ref = "logging" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

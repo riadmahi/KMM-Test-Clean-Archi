@@ -11,7 +11,8 @@ import SwiftUI
 struct WelcomeScreen: View {
     @State private var navigateToSignIn = false
     @State private var navigateToSignUp = false
-    
+    @EnvironmentObject var navGraph: NavGraph
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -33,7 +34,8 @@ struct WelcomeScreen: View {
                     }
                     .navigationDestination(
                         isPresented: $navigateToSignIn,
-                        destination: { SignInScreen()}
+                        destination: { SignInScreen().environmentObject(navGraph)
+                        }
                     )
                     
                     DarkHobButton(text: "Sign up", width: UIScreen.main.bounds.width - 32) {

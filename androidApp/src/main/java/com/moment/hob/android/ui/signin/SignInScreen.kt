@@ -2,6 +2,7 @@ package com.moment.hob.android.ui.signin
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -48,7 +49,8 @@ import com.moment.hob.state.SignInUiState
 @Composable
 fun SignInScreen(
     viewModel: SignInViewModel,
-    navigateBack: () -> Unit
+    navigateBack: () -> Unit,
+    navigateToExplore: () -> Unit
 ) {
     val uiState = viewModel.uiState.collectAsState()
     var emailText by rememberSaveable { mutableStateOf("") }
@@ -98,7 +100,10 @@ fun SignInScreen(
                     unfocusedContainerColor = MaterialTheme.colorScheme.primaryContainer
                 ),
                 maxLines = 1,
-                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Email,
+                    imeAction = ImeAction.Next
+                ),
             )
 
             OutlinedTextField(
@@ -129,7 +134,9 @@ fun SignInScreen(
                     keyboardType = KeyboardType.Password,
                     imeAction = ImeAction.Done
                 ),
-                keyboardActions = KeyboardActions(onDone = {}),
+                keyboardActions = KeyboardActions(onDone = {
+                    viewModel.signIn(emailText, passwordText)
+                }),
                 trailingIcon = {
                     val image = if (passwordVisible) painterResource(id = R.drawable.ic_eye_slash)
                     else painterResource(id = R.drawable.ic_eye)
@@ -152,10 +159,24 @@ fun SignInScreen(
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.End
             )
-            when(uiState.value) {
-                is SignInUiState.Loading -> {
-                    CircularProgressIndicator()
+            when (uiState.value) {
+                is SignInUiState.Success -> {
+                    navigateToExplore()
                 }
+
+                is SignInUiState.Loading -> {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        CircularProgressIndicator(
+                            modifier = Modifier.size(32.dp),
+                            color = MaterialTheme.colorScheme.primary
+                        )
+
+                    }
+                }
+
                 else -> {
                     HobButton(
                         modifier = Modifier
@@ -169,7 +190,7 @@ fun SignInScreen(
                 }
             }
 
-            if(uiState.value is SignInUiState.Error) {
+            if (uiState.value is SignInUiState.Error) {
                 ErrorCard(cause = (uiState.value as SignInUiState.Error).cause)
             }
         }

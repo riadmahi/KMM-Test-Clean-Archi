@@ -1,6 +1,7 @@
 package com.moment.hob
 
 import com.moment.hob.dto.SignInRequest
+import com.moment.hob.dto.TokenRequest
 import com.moment.hob.model.Token
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -33,13 +34,26 @@ class HobApi {
 
     suspend fun signIn(email: String, password: String): Result<Token> {
         val response = client.post {
-            url(address.toString() + "login")
+            url(address.toString() + "login/")
             contentType(ContentType.Application.Json)
             setBody(SignInRequest(email, password))
         }
 
         return if (response.status == HttpStatusCode.OK) {
             Result.Success(response.body<Token>())
+        } else {
+            Result.Error(response.bodyAsText())
+        }
+    }
+
+    suspend fun checkToken(token: String): Result<Boolean> {
+        val response = client.post {
+            url(address.toString() + "token-verify/")
+            contentType(ContentType.Application.Json)
+            setBody(TokenRequest(token))
+        }
+        return if (response.status == HttpStatusCode.OK) {
+            Result.Success(true)
         } else {
             Result.Error(response.bodyAsText())
         }
