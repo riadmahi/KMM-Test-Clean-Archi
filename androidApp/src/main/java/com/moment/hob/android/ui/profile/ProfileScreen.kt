@@ -29,7 +29,10 @@ import com.moment.hob.model.Profile
 import com.moment.hob.state.ProfileUiState
 
 @Composable
-fun ProfileScreen(viewModel: ProfileViewModel) {
+fun ProfileScreen(
+    viewModel: ProfileViewModel,
+    navigateToEditProfile: () -> Unit
+) {
     val uiState = viewModel.uiState
     val profile: Profile? = (uiState as? ProfileUiState.Success)?.profile
     Column(
@@ -37,9 +40,11 @@ fun ProfileScreen(viewModel: ProfileViewModel) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
-        ProfileHeader(profile?.displayName?: "")
+        ProfileHeader(profile?.displayName ?: "")
         PremiumCard()
-        ProfileActions()
+        ProfileActions(
+            navigateToEditProfile = { navigateToEditProfile() }
+        )
     }
 }
 
@@ -85,11 +90,13 @@ fun PremiumCard() {
 }
 
 @Composable
-fun ProfileActions() {
+fun ProfileActions(
+    navigateToEditProfile: () -> Unit
+) {
     Column(
         modifier = Modifier.fillMaxWidth(0.9f)
     ) {
-        ProfileAction(title = stringResource(id = R.string.profile_action_edit_profile)) {}
+        ProfileAction(title = stringResource(id = R.string.profile_action_edit_profile)) { navigateToEditProfile() }
         DefaultDivider()
         ProfileAction(title = stringResource(id = R.string.profile_action_manage_my_account)) {}
         DefaultDivider()
@@ -102,7 +109,7 @@ fun ProfileActions() {
 
 @Composable
 fun DefaultDivider() {
-    Divider (
+    Divider(
         color = WhiteSmoke,
         modifier = Modifier
             .height(1.dp)

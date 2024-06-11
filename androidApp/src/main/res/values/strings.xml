@@ -19,4 +19,8 @@
     <string name="nav_indicator_sign_in">Sign In</string>
     <string name="nav_indicator_sign_up">Sign Up</string>
     <string name="forgot_your_password">Forgot your password?</string>
+    <string name="settings_section_about_you">About you</string>
+    <string name="settings_section_about_display_name">Display name</string>
+    <string name="settings_section_about_biography">Biography</string>
+    <string name="settings_section_about_birth_date">Birth date</string>
 </resources>

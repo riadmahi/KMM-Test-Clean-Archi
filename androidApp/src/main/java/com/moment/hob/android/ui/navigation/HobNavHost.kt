@@ -6,13 +6,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.moment.hob.HobApi
 import com.moment.hob.HobRepository
 import com.moment.hob.android.ui.chat.ChatScreen
 import com.moment.hob.android.ui.explore.ExploreScreen
 import com.moment.hob.android.ui.likes.LikesScreen
 import com.moment.hob.android.ui.profile.ProfileScreen
 import com.moment.hob.android.ui.profile.ProfileViewModel
+import com.moment.hob.android.ui.settings.EditProfileScreen
 import com.moment.hob.android.ui.signin.SignInScreen
 import com.moment.hob.android.ui.signin.SignInViewModel
 import com.moment.hob.android.ui.signup.SignUpScreen
@@ -72,7 +72,16 @@ fun HobNavHost(
 
         composable(HobRoute.PROFILE) {
             ProfileScreen(
-                viewModel = ProfileViewModel(hobRepository)
+                viewModel = ProfileViewModel(hobRepository),
+                navigateToEditProfile = { navController.navigate(HobRoute.EDIT_PROFILE) }
+            )
+        }
+
+        composable(HobRoute.EDIT_PROFILE) {
+            EditProfileScreen(
+                onNavigateBack = {
+                    navController.popBackStack()
+                }
             )
         }
     }

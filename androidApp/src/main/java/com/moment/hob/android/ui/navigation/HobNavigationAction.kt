@@ -6,13 +6,14 @@ import androidx.navigation.NavHostController
 import com.moment.hob.android.R
 
 object HobRoute {
-    const val EXPLORE = "Explore"
-    const val LIKES = "Likes"
-    const val CHAT = "Chat"
-    const val PROFILE = "Profile"
-    const val WELCOME = "Welcome"
-    const val SIGN_IN = "Signin"
-    const val SIGN_UP = "Signup"
+    const val EXPLORE = "explore"
+    const val LIKES = "likes"
+    const val CHAT = "chat"
+    const val PROFILE = "profile"
+    const val WELCOME = "welcome"
+    const val SIGN_IN = "signin"
+    const val SIGN_UP = "signup"
+    const val EDIT_PROFILE = "edit_profile"
 }
 
 data class HobTopLevelDestination(
