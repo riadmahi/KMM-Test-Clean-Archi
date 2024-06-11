@@ -12,6 +12,7 @@ import com.moment.hob.android.ui.chat.ChatScreen
 import com.moment.hob.android.ui.explore.ExploreScreen
 import com.moment.hob.android.ui.likes.LikesScreen
 import com.moment.hob.android.ui.profile.ProfileScreen
+import com.moment.hob.android.ui.profile.ProfileViewModel
 import com.moment.hob.android.ui.signin.SignInScreen
 import com.moment.hob.android.ui.signin.SignInViewModel
 import com.moment.hob.android.ui.signup.SignUpScreen
@@ -70,7 +71,9 @@ fun HobNavHost(
         }
 
         composable(HobRoute.PROFILE) {
-            ProfileScreen()
+            ProfileScreen(
+                viewModel = ProfileViewModel(hobRepository)
+            )
         }
     }
 }

@@ -25,15 +25,19 @@ import coil.compose.AsyncImage
 import com.moment.hob.android.R
 import com.moment.hob.android.ui.common.PremiumButton
 import com.moment.hob.android.ui.theme.WhiteSmoke
+import com.moment.hob.model.Profile
+import com.moment.hob.state.ProfileUiState
 
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(viewModel: ProfileViewModel) {
+    val uiState = viewModel.uiState
+    val profile: Profile? = (uiState as? ProfileUiState.Success)?.profile
     Column(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
-        ProfileHeader()
+        ProfileHeader(profile?.displayName?: "")
         PremiumCard()
         ProfileActions()
     }
@@ -41,7 +45,9 @@ fun ProfileScreen() {
 
 
 @Composable
-fun ProfileHeader() {
+fun ProfileHeader(
+    name: String
+) {
     Column(
         modifier = Modifier.padding(top = 12.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -55,7 +61,7 @@ fun ProfileHeader() {
             contentDescription = null,
             contentScale = ContentScale.Crop
         )
-        Text(text = "Riad", style = MaterialTheme.typography.labelLarge)
+        Text(text = name, style = MaterialTheme.typography.labelLarge)
     }
 }
 
