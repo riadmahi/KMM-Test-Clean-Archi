@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -16,6 +17,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -37,18 +39,21 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.moment.hob.android.R
+import com.moment.hob.android.ui.common.ErrorCard
 import com.moment.hob.android.ui.common.HobButton
 import com.moment.hob.android.ui.common.NavIndicatorBar
 import com.moment.hob.android.ui.theme.BrSonoma
+import com.moment.hob.state.SignInUiState
 
 @Composable
 fun SignInScreen(
+    viewModel: SignInViewModel,
     navigateBack: () -> Unit
 ) {
+    val uiState = viewModel.uiState.collectAsState()
     var emailText by rememberSaveable { mutableStateOf("") }
     var passwordText by rememberSaveable { mutableStateOf("") }
     var passwordVisible by rememberSaveable { mutableStateOf(false) }
-
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -147,19 +152,26 @@ fun SignInScreen(
                 style = MaterialTheme.typography.bodyMedium,
                 textAlign = TextAlign.End
             )
-            HobButton(
-                modifier = Modifier.fillMaxWidth().padding(top = 24.dp),
-                text = stringResource(id = R.string.signin_btn),
-                onClick = { }
-            )
+            when(uiState.value) {
+                is SignInUiState.Loading -> {
+                    CircularProgressIndicator()
+                }
+                else -> {
+                    HobButton(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 24.dp),
+                        text = stringResource(id = R.string.signin_btn),
+                        onClick = {
+                            viewModel.signIn(emailText, passwordText)
+                        }
+                    )
+                }
+            }
+
+            if(uiState.value is SignInUiState.Error) {
+                ErrorCard(cause = (uiState.value as SignInUiState.Error).cause)
+            }
         }
-
-
     }
-}
-
-@Composable
-@Preview
-fun SignInScreenPreview() = SignInScreen() {
-
 }

@@ -6,11 +6,14 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.moment.hob.HobApi
+import com.moment.hob.HobRepository
 import com.moment.hob.android.ui.chat.ChatScreen
 import com.moment.hob.android.ui.explore.ExploreScreen
 import com.moment.hob.android.ui.likes.LikesScreen
 import com.moment.hob.android.ui.profile.ProfileScreen
 import com.moment.hob.android.ui.signin.SignInScreen
+import com.moment.hob.android.ui.signin.SignInViewModel
 import com.moment.hob.android.ui.signup.SignUpScreen
 import com.moment.hob.android.ui.welcome.WelcomeScreen
 
@@ -21,6 +24,7 @@ fun HobNavHost(
     navController: NavHostController = rememberNavController(),
     startDestination: String = HobRoute.EXPLORE,
 ) {
+    val hobRepository = HobRepository(HobApi())
     NavHost(
         modifier = modifier,
         navController = navController,
@@ -35,6 +39,7 @@ fun HobNavHost(
 
         composable(HobRoute.SIGN_IN) {
             SignInScreen(
+                viewModel = SignInViewModel(hobRepository),
                 navigateBack = { navController.popBackStack() }
             )
         }
