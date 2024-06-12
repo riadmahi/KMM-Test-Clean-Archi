@@ -23,4 +23,8 @@
     <string name="settings_section_about_display_name">Display name</string>
     <string name="settings_section_about_biography">Biography</string>
     <string name="settings_section_about_birth_date">Birth date</string>
+    <string name="settings_section_about_origins">Origins</string>
+    <string name="settings_section_about_languages">Languages</string>
+    <string name="settings_section_about_interests">Interests</string>
+    <string name="settings_section_about_personalities">Personalities</string>
 </resources>

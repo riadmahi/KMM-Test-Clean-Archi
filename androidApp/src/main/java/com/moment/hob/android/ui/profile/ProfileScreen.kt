@@ -14,6 +14,7 @@ import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,6 +23,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.moment.hob.HobRepository
 import com.moment.hob.android.R
 import com.moment.hob.android.ui.common.PremiumButton
 import com.moment.hob.android.ui.theme.WhiteSmoke
@@ -33,8 +35,8 @@ fun ProfileScreen(
     viewModel: ProfileViewModel,
     navigateToEditProfile: () -> Unit
 ) {
-    val uiState = viewModel.uiState
-    val profile: Profile? = (uiState as? ProfileUiState.Success)?.profile
+    val profileUiState = viewModel.uiState.collectAsState()
+    val profile: Profile? = (profileUiState.value as? ProfileUiState.Success)?.profile
     Column(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,

@@ -13,7 +13,7 @@ fun SettingSectionTitle(
     Text(
         text = title,
         color = Color.Black,
-        style = MaterialTheme.typography.labelLarge
+        style = MaterialTheme.typography.labelMedium
     )
 }
 

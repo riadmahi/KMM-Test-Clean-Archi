@@ -13,6 +13,8 @@ import com.moment.hob.android.ui.likes.LikesScreen
 import com.moment.hob.android.ui.profile.ProfileScreen
 import com.moment.hob.android.ui.profile.ProfileViewModel
 import com.moment.hob.android.ui.settings.EditProfileScreen
+import com.moment.hob.android.ui.settings.EditProfileViewModel
+import com.moment.hob.android.ui.settings.about.EditDisplayNameScreen
 import com.moment.hob.android.ui.signin.SignInScreen
 import com.moment.hob.android.ui.signin.SignInViewModel
 import com.moment.hob.android.ui.signup.SignUpScreen
@@ -26,6 +28,7 @@ fun HobNavHost(
     startDestination: String = HobRoute.WELCOME,
     hobRepository: HobRepository
 ) {
+    val editProfileViewModel = EditProfileViewModel(hobRepository)
     NavHost(
         modifier = modifier,
         navController = navController,
@@ -79,7 +82,20 @@ fun HobNavHost(
 
         composable(HobRoute.EDIT_PROFILE) {
             EditProfileScreen(
+                viewModel = editProfileViewModel,
                 onNavigateBack = {
+                    navController.popBackStack()
+                },
+                onNavigateToEditName = {
+                    navController.navigate(HobRoute.EDIT_PROFILE_NAME)
+                }
+            )
+        }
+
+        composable(HobRoute.EDIT_PROFILE_NAME) {
+            EditDisplayNameScreen(
+                viewModel = editProfileViewModel,
+                onBack = {
                     navController.popBackStack()
                 }
             )

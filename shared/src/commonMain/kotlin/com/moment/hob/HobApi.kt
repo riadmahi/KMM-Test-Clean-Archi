@@ -75,4 +75,20 @@ class HobApi {
             Result.Error(response.bodyAsText())
         }
     }
+
+    suspend fun updateProfile(token: String, profile: Profile): Result<Profile> {
+        val response = client.patch {
+            url(address.toString() + "profile/")
+            contentType(ContentType.Application.Json)
+            headers {
+                append(HttpHeaders.Authorization, "Bearer $token")
+            }
+            setBody(profile)
+        }
+        return if (response.status == HttpStatusCode.OK) {
+            Result.Success(response.body() as Profile)
+        } else {
+            Result.Error(response.bodyAsText())
+        }
+    }
 }

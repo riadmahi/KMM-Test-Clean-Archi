@@ -50,7 +50,7 @@ fun HobAppContent(
     val currentDestination = currentBackStackEntry?.destination
     var startDestination by remember { mutableStateOf(HobRoute.EXPLORE) }
     LaunchedEffect(Unit, Dispatchers.IO) {
-        startDestination = if (hobRepository.checkToken()) HobRoute.EXPLORE else HobRoute.WELCOME
+        startDestination = if (hobRepository.checkToken()) HobRoute.EDIT_PROFILE else HobRoute.WELCOME
         Log.d("TAG", "HobAppContent: start desti $startDestination")
     }
     Column {
