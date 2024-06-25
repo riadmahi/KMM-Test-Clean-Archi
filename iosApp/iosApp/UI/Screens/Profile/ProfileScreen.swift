@@ -29,7 +29,7 @@ struct ProfileScreen: View {
 
 struct ProfileContent: View {
     var body: some View {
-        VStack {
+        NavigationStack {
             PremiumCard()
             ProfileActionCard(actionName: "Edit your profile")
             Divider().padding(.horizontal, 24)

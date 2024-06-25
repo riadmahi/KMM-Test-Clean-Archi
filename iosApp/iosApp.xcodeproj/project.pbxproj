@@ -30,6 +30,8 @@
 		4847AF3D2C0DE895005EAA92 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3C2C0DE895005EAA92 /* ChatScreen.swift */; };
 		4847AF3F2C0DEE2D005EAA92 /* ChatCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3E2C0DEE2D005EAA92 /* ChatCard.swift */; };
 		485814BB2C0EECD1004BCCE1 /* SignUpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485814BA2C0EECD1004BCCE1 /* SignUpScreen.swift */; };
+		485EEE832C2B46A0003898D7 /* EditProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485EEE822C2B46A0003898D7 /* EditProfileScreen.swift */; };
+		486D10082C2B4A4700A00CE0 /* SettingField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 486D10072C2B4A4700A00CE0 /* SettingField.swift */; };
 		48A94DC12C0E4A0E0029AAEC /* HobButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC02C0E4A0E0029AAEC /* HobButton.swift */; };
 		48A94DC32C0E4B8C0029AAEC /* DarkHobButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC22C0E4B8C0029AAEC /* DarkHobButton.swift */; };
 		48A94DC72C0E4DFD0029AAEC /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A94DC62C0E4DFD0029AAEC /* SignInScreen.swift */; };
@@ -82,6 +84,8 @@
 		4847AF3C2C0DE895005EAA92 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
 		4847AF3E2C0DEE2D005EAA92 /* ChatCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCard.swift; sourceTree = "<group>"; };
 		485814BA2C0EECD1004BCCE1 /* SignUpScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpScreen.swift; sourceTree = "<group>"; };
+		485EEE822C2B46A0003898D7 /* EditProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreen.swift; sourceTree = "<group>"; };
+		486D10072C2B4A4700A00CE0 /* SettingField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingField.swift; sourceTree = "<group>"; };
 		48A94DC02C0E4A0E0029AAEC /* HobButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobButton.swift; sourceTree = "<group>"; };
 		48A94DC22C0E4B8C0029AAEC /* DarkHobButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkHobButton.swift; sourceTree = "<group>"; };
 		48A94DC62C0E4DFD0029AAEC /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 		480F55DF2C0CE26A005D87DC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				485EEE812C2B4691003898D7 /* Settings */,
 				48A94DC52C0E4DEC0029AAEC /* SignUp */,
 				48A94DC42C0E4DE40029AAEC /* SignIn */,
 				48EA46E72C0E476200937DF1 /* Welcome */,
@@ -206,6 +211,15 @@
 				480F55FB2C0CE7E1005D87DC /* BRSonoma-SemiBold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		485EEE812C2B4691003898D7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				485EEE822C2B46A0003898D7 /* EditProfileScreen.swift */,
+				486D10072C2B4A4700A00CE0 /* SettingField.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		48A94DC42C0E4DE40029AAEC /* SignIn */ = {
@@ -373,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				485EEE832C2B46A0003898D7 /* EditProfileScreen.swift in Sources */,
 				480F56092C0CF781005D87DC /* ReactionsBar.swift in Sources */,
 				4847AF3D2C0DE895005EAA92 /* ChatScreen.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
@@ -387,6 +402,7 @@
 				48C65CCF2C177B4700FC68CB /* ErrorCard.swift in Sources */,
 				4847AF392C0DD936005EAA92 /* LikesScreen.swift in Sources */,
 				480F560B2C0CF95F005D87DC /* ColorExtension.swift in Sources */,
+				486D10082C2B4A4700A00CE0 /* SettingField.swift in Sources */,
 				48A94DC32C0E4B8C0029AAEC /* DarkHobButton.swift in Sources */,
 				48A94DC12C0E4A0E0029AAEC /* HobButton.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
