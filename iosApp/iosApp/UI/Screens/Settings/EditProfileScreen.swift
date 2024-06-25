@@ -14,7 +14,7 @@ struct EditProfileScreen: View {
             Text("About you")
                 .padding(.horizontal, 32)
                 .padding(.vertical, 2)
-                .font(Font.custom("BRSonoma-SemiBold", size: 16))
+                .font(Font.custom("BRSonoma-SemiBold", size: 15))
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             SettingField(fieldName: "Prénom", field: "Riad")

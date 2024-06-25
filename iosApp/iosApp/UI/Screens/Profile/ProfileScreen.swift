@@ -15,30 +15,38 @@ struct ProfileScreen: View {
     @StateObject private var viewModel = ViewModel()
     
     var body: some View {
-        ScrollView {
-            if let profile = (viewModel.state as? ProfileUiStateSuccess)?.profile {
-                ProfileHeader(photoUrl: "https://plus.unsplash.com/premium_photo-1675107360237-22fa96b9995b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8fA%3D%3D",
-                              name: profile.displayName)
-                ProfileContent()
-            }
+        NavigationStack {
             
+            ScrollView {
+                if let profile = (viewModel.state as? ProfileUiStateSuccess)?.profile {
+                    ProfileHeader(photoUrl: "https://plus.unsplash.com/premium_photo-1675107360237-22fa96b9995b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxN3x8fGVufDB8fHx8fA%3D%3D",
+                                  name: profile.displayName)
+                    ProfileContent()
+                }
+                
+            }
         }
     }
 }
 
 
 struct ProfileContent: View {
+    @State private var navigateToEditProfile = false
+    
     var body: some View {
-        NavigationStack {
-            PremiumCard()
-            ProfileActionCard(actionName: "Edit your profile")
-            Divider().padding(.horizontal, 24)
-            ProfileActionCard(actionName: "Manage my account")
-            Divider().padding(.horizontal, 24)
-            ProfileActionCard(actionName: "App settings")
-            Divider().padding(.horizontal, 24)
-            ProfileActionCard(actionName: "Contact support")
-        }
+        PremiumCard()
+        ProfileActionCard(actionName: "Edit your profile") {
+            navigateToEditProfile = true
+        } .navigationDestination(
+            isPresented: $navigateToEditProfile,
+            destination: { EditProfileScreen()}
+        )
+        Divider().padding(.horizontal, 24)
+        ProfileActionCard(actionName: "Manage my account") { }
+        Divider().padding(.horizontal, 24)
+        ProfileActionCard(actionName: "App settings"){ }
+        Divider().padding(.horizontal, 24)
+        ProfileActionCard(actionName: "Contact support"){ }
     }
 }
 
