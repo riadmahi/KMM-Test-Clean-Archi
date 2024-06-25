@@ -16,9 +16,10 @@ swipeCard = "0.1.0"
 ktor = "2.3.11"
 lifecycleViewmodelCompose = "2.8.0"
 kotlinSerialization = "1.7.3"
-ksp = "1.9.22-1.0.18"
+ksp = "1.9.20-1.0.14"
 realm = "1.16.0"
 logging = "1.4.1"
+kmpNativeCoroutines = "1.0.0-ALPHA-21"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -58,3 +59,5 @@ kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", versio
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 realm = { id = "io.realm.kotlin", version.ref = "realm" }
+kmpNativeCoroutines = { id = "com.rickclephas.kmp.nativecoroutines", version.ref = "kmpNativeCoroutines" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

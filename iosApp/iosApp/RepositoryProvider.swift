@@ -8,6 +8,7 @@
 
 import Foundation
 import shared
+import KMPNativeCoroutinesCombine
 
 class RepositoryProvider {
     static let shared = RepositoryProvider()

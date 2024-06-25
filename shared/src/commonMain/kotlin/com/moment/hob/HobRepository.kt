@@ -4,12 +4,13 @@ import com.moment.hob.model.Profile
 import com.moment.hob.model.Token
 import com.moment.hob.state.ProfileUiState
 import com.moment.hob.state.SignInUiState
-import com.moment.hob.state.UpdateUiState
+import com.rickclephas.kmp.nativecoroutines.NativeCoroutines
+import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import io.realm.kotlin.ext.query
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import org.lighthousegames.logging.logging
@@ -18,7 +19,9 @@ class HobRepository(private val api: HobApi) {
 
     private var token = Token()
     private var _profileUiState = MutableStateFlow<ProfileUiState>(ProfileUiState.None)
-    val profileUiState = _profileUiState.asStateFlow()
+    @NativeCoroutinesState
+    val profileUiState: StateFlow<ProfileUiState> = _profileUiState.asStateFlow()
+
     private val realm: Realm by lazy {
         val configuration = RealmConfiguration.create(schema = setOf(Token::class))
         Realm.open(configuration)

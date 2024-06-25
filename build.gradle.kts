@@ -8,4 +8,7 @@ plugins {
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.kotlinSerialization) apply false
     alias(libs.plugins.realm) apply false
+    alias(libs.plugins.kmpNativeCoroutines) apply false
+    alias(libs.plugins.ksp) apply false
+
 }
