@@ -13,7 +13,7 @@ import KMPNativeCoroutinesCombine
 
 struct ProfileScreen: View {
     @StateObject private var viewModel = ViewModel()
-    
+
     var body: some View {
         NavigationStack {
             
@@ -30,23 +30,18 @@ struct ProfileScreen: View {
 }
 
 
-struct ProfileContent: View {
-    @State private var navigateToEditProfile = false
-    
+struct ProfileContent: View {    
     var body: some View {
         PremiumCard()
-        ProfileActionCard(actionName: "Edit your profile") {
-            navigateToEditProfile = true
-        } .navigationDestination(
-            isPresented: $navigateToEditProfile,
-            destination: { EditProfileScreen()}
-        )
+        NavigationLink(destination: EditProfileScreen()){
+            ProfileActionCard(actionName: "Edit your profile")
+        }
         Divider().padding(.horizontal, 24)
-        ProfileActionCard(actionName: "Manage my account") { }
+        ProfileActionCard(actionName: "Manage my account")
         Divider().padding(.horizontal, 24)
-        ProfileActionCard(actionName: "App settings"){ }
+        ProfileActionCard(actionName: "App settings")
         Divider().padding(.horizontal, 24)
-        ProfileActionCard(actionName: "Contact support"){ }
+        ProfileActionCard(actionName: "Contact support")
     }
 }
 

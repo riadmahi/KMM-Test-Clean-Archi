@@ -8,35 +8,25 @@
 
 import Foundation
 import shared
-import KMPNativeCoroutinesCombine
+import KMPNativeCoroutinesRxSwift
 import Combine
 
 class RepositoryProvider {
     static let shared = RepositoryProvider()
     let hobRepository: HobRepository
-    private var cancellables = Set<AnyCancellable>()
     @Published public var profileUiState: ProfileUiState = ProfileUiStateLoading()
-
+    
     private init() {
         let api = HobApi()
         self.hobRepository = HobRepository(api: api)
         
-        let publisher = createPublisher(for: hobRepository.profileUiStateFlow)
-        publisher
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    // Handle successful completion (optional)
-                    break
-                case .failure(let error):
-                    // Handle error
-                    print("Error received: \(error)")
-                }
-            }, receiveValue: { [weak self] newState in
-                print(newState)
+        let observable = createObservable(for: hobRepository.profileUiStateFlow)
+        let _ = observable.subscribe(onNext: { [weak self] newState in
+            DispatchQueue.main.async {
                 self?.profileUiState = newState
-            })
-            .store(in: &cancellables)
+            }
+        }, onError: { error in
+            print("Error: \(error)")
+        })
     }
 }
