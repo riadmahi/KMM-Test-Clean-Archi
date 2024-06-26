@@ -54,34 +54,12 @@ extension ProfileScreen {
     @MainActor
     class ViewModel: ObservableObject {
         private var repository: HobRepository
-        private var cancellables = Set<AnyCancellable>()
         @Published public var state: ProfileUiState =  ProfileUiStateNone()
         
         init(repository: HobRepository = RepositoryProvider.shared.hobRepository) {
             self.repository = repository
-            // Create an AnyPublisher for your flow
-            
-            let publisher = createPublisher(for: repository.profileUiStateFlow)
-            publisher
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { completion in
-                    switch completion {
-                    case .finished:
-                        // Handle successful completion (optional)
-                        break
-                    case .failure(let error):
-                        // Handle error
-                        print("Error received: \(error)")
-                    }
-                }, receiveValue: { [weak self] newState in
-                    print(newState)
-                    self?.state = newState
-                })
-                .store(in: &cancellables)
+            self.state = repository.profileUiState
         }
-        
-        
-        
     }
 }
 
