@@ -8,5 +8,5 @@ data class Profile(
     val email: String,
     @SerialName("display_name") var displayName: String,
     @SerialName("birth_date") val birthDate: String,
-    val biography: String
+    var biography: String
 )

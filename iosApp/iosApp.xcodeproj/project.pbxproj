@@ -26,6 +26,7 @@
 		481E0E2D2C2C06A80050AA75 /* EditNameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E0E2C2C2C06A80050AA75 /* EditNameScreen.swift */; };
 		482451B22C0D020000DCF04B /* Shuffle in Frameworks */ = {isa = PBXBuildFile; productRef = 482451B12C0D020000DCF04B /* Shuffle */; };
 		482451B72C0D052600DCF04B /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482451B62C0D052600DCF04B /* SwipeCardView.swift */; };
+		482D9B002C4142500074C25F /* EditBiographyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482D9AFF2C4142500074C25F /* EditBiographyScreen.swift */; };
 		4847AF392C0DD936005EAA92 /* LikesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF382C0DD936005EAA92 /* LikesScreen.swift */; };
 		4847AF3B2C0DE875005EAA92 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3A2C0DE875005EAA92 /* ProfileScreen.swift */; };
 		4847AF3D2C0DE895005EAA92 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3C2C0DE895005EAA92 /* ChatScreen.swift */; };
@@ -81,6 +82,7 @@
 		481B2D1E2C18E7FB0097FAEB /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		481E0E2C2C2C06A80050AA75 /* EditNameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameScreen.swift; sourceTree = "<group>"; };
 		482451B62C0D052600DCF04B /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
+		482D9AFF2C4142500074C25F /* EditBiographyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBiographyScreen.swift; sourceTree = "<group>"; };
 		4847AF382C0DD936005EAA92 /* LikesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesScreen.swift; sourceTree = "<group>"; };
 		4847AF3A2C0DE875005EAA92 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		4847AF3C2C0DE895005EAA92 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				481E0E2C2C2C06A80050AA75 /* EditNameScreen.swift */,
+				482D9AFF2C4142500074C25F /* EditBiographyScreen.swift */,
 			);
 			path = EditProfile;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				48EA46E92C0E476F00937DF1 /* WelcomeScreen.swift in Sources */,
 				481B2D1F2C18E7FB0097FAEB /* ProfileHeader.swift in Sources */,
 				485814BB2C0EECD1004BCCE1 /* SignUpScreen.swift in Sources */,
+				482D9B002C4142500074C25F /* EditBiographyScreen.swift in Sources */,
 				4847AF3B2C0DE875005EAA92 /* ProfileScreen.swift in Sources */,
 				48C65CCF2C177B4700FC68CB /* ErrorCard.swift in Sources */,
 				4847AF392C0DD936005EAA92 /* LikesScreen.swift in Sources */,

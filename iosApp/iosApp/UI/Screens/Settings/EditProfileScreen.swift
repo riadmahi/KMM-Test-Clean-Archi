@@ -20,12 +20,14 @@ struct EditProfileScreen: View {
                     Text("About you")
                         .padding(.horizontal, 12)
                         .padding(.vertical, 2)
-                        .font(Font.custom("BRSonoma-SemiBold", size: 15))
+                        .font(Font.custom("BRSonoma-SemiBold", size: 14))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     NavigationLink(destination: EditNameScreen()){
                         SettingField(fieldName: "Prénom", field: profile.displayName)
                     }
-                    SettingField(fieldName: "Biographie", field: profile.biography)
+                    NavigationLink(destination: EditBiographyScreen()){
+                        SettingField(fieldName: "Biographie", field: profile.biography)
+                    }
                     SettingField(fieldName: "Taille", field: "1m89")
                     SettingField(fieldName: "Origines", field: "France, Maroc")
                     SettingField(fieldName: "Langues", field: "Darija (marocain), Français")
@@ -53,24 +55,24 @@ extension EditProfileScreen {
         private var repository: HobRepository
         @Published public var state: ProfileUiState =  ProfileUiStateNone()
         private var cancellables = Set<AnyCancellable>()
-
+        
         init(repository: HobRepository = RepositoryProvider.shared.hobRepository) {
             self.repository = repository
             self.state = repository.profileUiState
         }
         
         func startObserving() {
-                    RepositoryProvider.shared.$profileUiState
-                        .receive(on: DispatchQueue.main)
-                        .sink { [weak self] newState in
-                            self?.state = newState
-                        }
-                        .store(in: &cancellables)
+            RepositoryProvider.shared.$profileUiState
+                .receive(on: DispatchQueue.main)
+                .sink { [weak self] newState in
+                    self?.state = newState
                 }
-                
-                func stopObserving() {
-                    cancellables.removeAll()
-                }
+                .store(in: &cancellables)
+        }
+        
+        func stopObserving() {
+            cancellables.removeAll()
+        }
     }
 }
 
