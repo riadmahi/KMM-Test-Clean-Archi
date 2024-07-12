@@ -38,6 +38,11 @@ class HobRepository(private val api: HobApi) {
         }
     }
 
+    fun logout() {
+        _profileUiState.update { ProfileUiState.Disconnected }
+        removeToken()
+    }
+
     suspend fun checkToken(): Boolean {
         token = getToken() ?: return false
         val result = api.checkToken(token.access)

@@ -40,7 +40,9 @@ struct ProfileContent: View {
             ProfileActionCard(actionName: "Edit your profile")
         }
         Divider().padding(.horizontal, 24)
-        ProfileActionCard(actionName: "Manage my account")
+        NavigationLink(destination: ManageAccountScreen()){
+            ProfileActionCard(actionName: "Manage your account")
+        }
         Divider().padding(.horizontal, 24)
         ProfileActionCard(actionName: "App settings")
         Divider().padding(.horizontal, 24)

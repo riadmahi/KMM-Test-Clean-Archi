@@ -27,6 +27,7 @@
 		482451B22C0D020000DCF04B /* Shuffle in Frameworks */ = {isa = PBXBuildFile; productRef = 482451B12C0D020000DCF04B /* Shuffle */; };
 		482451B72C0D052600DCF04B /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482451B62C0D052600DCF04B /* SwipeCardView.swift */; };
 		482D9B002C4142500074C25F /* EditBiographyScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482D9AFF2C4142500074C25F /* EditBiographyScreen.swift */; };
+		482D9B022C4145A90074C25F /* ManageAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482D9B012C4145A90074C25F /* ManageAccountScreen.swift */; };
 		4847AF392C0DD936005EAA92 /* LikesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF382C0DD936005EAA92 /* LikesScreen.swift */; };
 		4847AF3B2C0DE875005EAA92 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3A2C0DE875005EAA92 /* ProfileScreen.swift */; };
 		4847AF3D2C0DE895005EAA92 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4847AF3C2C0DE895005EAA92 /* ChatScreen.swift */; };
@@ -83,6 +84,7 @@
 		481E0E2C2C2C06A80050AA75 /* EditNameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameScreen.swift; sourceTree = "<group>"; };
 		482451B62C0D052600DCF04B /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
 		482D9AFF2C4142500074C25F /* EditBiographyScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBiographyScreen.swift; sourceTree = "<group>"; };
+		482D9B012C4145A90074C25F /* ManageAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccountScreen.swift; sourceTree = "<group>"; };
 		4847AF382C0DD936005EAA92 /* LikesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesScreen.swift; sourceTree = "<group>"; };
 		4847AF3A2C0DE875005EAA92 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		4847AF3C2C0DE895005EAA92 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
@@ -230,8 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				481E0E2B2C2C06990050AA75 /* EditProfile */,
-				485EEE822C2B46A0003898D7 /* EditProfileScreen.swift */,
 				486D10072C2B4A4700A00CE0 /* SettingField.swift */,
+				485EEE822C2B46A0003898D7 /* EditProfileScreen.swift */,
+				482D9B012C4145A90074C25F /* ManageAccountScreen.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				4847AF3D2C0DE895005EAA92 /* ChatScreen.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				482451B72C0D052600DCF04B /* SwipeCardView.swift in Sources */,
+				482D9B022C4145A90074C25F /* ManageAccountScreen.swift in Sources */,
 				480F56072C0CF734005D87DC /* ExploreScreen.swift in Sources */,
 				48A94DC72C0E4DFD0029AAEC /* SignInScreen.swift in Sources */,
 				48C65CCD2C17778600FC68CB /* RepositoryProvider.swift in Sources */,
